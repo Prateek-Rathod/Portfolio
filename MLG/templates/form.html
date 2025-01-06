@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction Form</title>
+    <style>
+        .btn-apple {
+            background-color: #388e3c;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 15px 35px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-apple:hover {
+            background-color: #2c6b2f;
+            transform: translateY(-3px);
+        }
+
+        .btn-apple:active {
+            transform: translateY(0);
+        }
+
+        .btn-apple:focus {
+            outline: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8f4;
+            color: #333;
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 100vh;
+
+        }
+
+        header,
+        footer {
+            background-color: #388e3c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: auto;
+
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #388e3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #66bb6a;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SatisfactionMetric</h1>
+    </header>
+    <br>
+    <center><button onclick="window.location.href='/form'" class="btn-apple">Try Again</button></center>
+    <br>
+    <center><button onclick="window.location.href='/'" class="btn-apple">Go Home</button></center>
+
+
+    <div class="container">
+        <h2>Prediction Form</h2>
+        <form action="/predict" method="post">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="SeniorCitizen">Senior Citizen:</label>
+            <select name="SeniorCitizen" id="SeniorCitizen" required>
+                <option value="">Select Senior Citizen Status</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+
+            <label for="Partner">Partner:</label>
+            <select name="Partner" id="Partner" required>
+                <option value="">Select Partner Status</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="Dependents">Dependents:</label>
+            <select name="Dependents" id="Dependents" required>
+                <option value="">Select Dependents Status</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="tenure">Tenure (Months):</label>
+            <input type="number" id="tenure" name="tenure" min="0" max="72" required><br><br>
+
+            <label for="PhoneService">Phone Service:</label>
+            <select name="PhoneService" id="PhoneService" required>
+                <option value="">Select Phone Service</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="MultipleLines">Multiple Lines:</label>
+            <select name="MultipleLines" id="MultipleLines" required>
+                <option value="">Select Multiple Lines</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No phone service">No phone service</option>
+            </select><br><br>
+
+            <label for="InternetService">Internet Service:</label>
+            <select name="InternetService" id="InternetService" required>
+                <option value="">Select Internet Service</option>
+                <option value="DSL">DSL</option>
+                <option value="Fiber optic">Fiber optic</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="OnlineSecurity">Online Security:</label>
+            <select name="OnlineSecurity" id="OnlineSecurity" required>
+                <option value="">Select Online Security</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="OnlineBackup">Online Backup:</label>
+            <select name="OnlineBackup" id="OnlineBackup" required>
+                <option value="">Select Online Backup</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="DeviceProtection">Device Protection:</label>
+            <select name="DeviceProtection" id="DeviceProtection" required>
+                <option value="">Select Device Protection</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="TechSupport">Tech Support:</label>
+            <select name="TechSupport" id="TechSupport" required>
+                <option value="">Select Tech Support</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="StreamingTV">Streaming TV:</label>
+            <select name="StreamingTV" id="StreamingTV" required>
+                <option value="">Select Streaming TV</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="StreamingMovies">Streaming Movies:</label>
+            <select name="StreamingMovies" id="StreamingMovies" required>
+                <option value="">Select Streaming Movies</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No internet service">No internet service</option>
+            </select><br><br>
+
+            <label for="Contract">Contract:</label>
+            <select name="Contract" id="Contract" required>
+                <option value="">Select Contract</option>
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select><br><br>
+
+            <label for="PaperlessBilling">Paperless Billing:</label>
+            <select name="PaperlessBilling" id="PaperlessBilling" required>
+                <option value="">Select Paperless Billing</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="PaymentMethod">Payment Method:</label>
+            <select name="PaymentMethod" id="PaymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+                <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                <option value="Credit card (automatic)">Credit card (automatic)</option>
+            </select><br><br>
+
+            <label for="MonthlyCharges">Monthly Charges:</label>
+            <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.01" min="0" required><br><br>
+
+            <label for="TotalCharges">Total Charges:</label>
+            <input type="number" id="TotalCharges" name="TotalCharges" step="0.01" min="0" required><br><br>
+
+            <center><button type="submit" class="btn-apple">Predict</button></center>
+        </form>
+        <br>
+        <center>
+            <div class="result" id="result">
+                <!-- {% if prediction_text %}
+            {{ prediction_text }}
+            {% else %} -->
+                Enter the data and click Predict to see results.
+                <!-- {% endif %} -->
+            </div>
+        </center>
+    </div>
+    <footer>
+        <p>&copy; 2024 SatisfactionMetric. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
